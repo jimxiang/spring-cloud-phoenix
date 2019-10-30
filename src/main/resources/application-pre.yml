@@ -1,0 +1,6 @@
+queryLimit:
+contactTable:
+jobTable:
+phoenix:
+  url: jdbc:phoenix:xxx:/hbase
+  driver: org.apache.phoenix.jdbc.PhoenixDriver

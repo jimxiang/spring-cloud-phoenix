@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: phoenix
+  jackson:
+    default-property-inclusion: non_null
+  profiles:
+    active: @package.environment@
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+server:
+  port:
+  compression:
+    enabled: true
+    mime-types: application/json,text/html,text/xml,text/plain,text/css,text/javascript,application/javascript
+    min-response-size: 2048
+
+logging:
+  level:
+    root: info
+  com:
+    service:
+      phoenix: info
